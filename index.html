@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculadora de Empréstimo</title>
+<link rel="stylesheet" href="style.css"/>
+<script type="text/javascript" src="calculador.js"></script>
+</head>
+<body>
+<table>
+    <tr><th>Insira os dados do empréstimo:</th>
+        <td></td>
+        <th>Saldo de Empréstimo, Patrimônio Cumulativo e Pagamento de Juros</th></tr>
+    <tr><td>Montante do empréstimo ($):</td>
+        <td><input id="amount" onchange="calculate();"></td>
+        <td rowspan=8>
+        <canvas id="graph" width="400" height="250"></canvas></td></tr>
+    <tr><td>Juro anual (%):</td>
+        <td><input id="apr" onchange="calculate();"></td></tr>
+    <tr><td>Período de reembolso (anos):</td>
+        <td><input id="years" onchange="calculate();"></td>
+    <tr><td>CEP (para encontrar emprestadores):</td>
+        <td><input id="zipcode" onchange="calculate();"></td>
+    <tr><th>Pagamentos Aproximados:</th>
+        <td><button onclick="calculate();">Calculate</button></td></tr>
+    <tr><td>Pagamento mensal:</td>
+        <td>$<span class="output" id="payment"></span></td></tr>
+    <tr><td>Pagamento total:</td>
+        <td>$<span class="output" id="total"></span></td></tr>
+    <tr><td>Interesse total:</td>
+        <td>$<span class="output" id="totalinterest"></span></td></tr>
+    <tr><th>Patrocinadores:</th><td colspan=2>
+        Candidate-se ao seu empréstimo com um desses emprestadores finos:
+        <div id="lenders"></div></td></tr>
+</table>
+</body>
+</html>
